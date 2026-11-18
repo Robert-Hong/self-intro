@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>홍철선 | 자기소개</title>
+<meta name="description" content="현장 기반의 ERP·MES·SCM 아키텍트 및 AI·데이터 자동화 실무 전문가 홍철선의 자기소개 페이지">
+<style>
+  /* ===== 색상·기본값 ===== */
+  :root {
+    --navy: #1e3a8a;
+    --navy-dark: #172554;
+    --accent: #2563eb;
+    --text: #1f2937;
+    --muted: #4b5563;
+    --line: #dbe3f0;
+    --bg: #ffffff;
+    --bg-soft: #f4f7fc;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.75;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  a { color: inherit; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  /* ===== 상단 메뉴 ===== */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-weight: 800; color: var(--navy); font-size: 1.1rem; text-decoration: none; }
+  .menu { display: flex; gap: 4px; list-style: none; }
+  .menu a {
+    display: block; padding: 8px 12px; border-radius: 8px;
+    text-decoration: none; color: var(--muted); font-size: 0.95rem; font-weight: 600;
+  }
+  .menu a:hover { background: var(--bg-soft); color: var(--navy); }
+  .menu a.active { background: var(--navy); color: #fff; }
+  .menu-btn {
+    display: none; background: none; border: 1px solid var(--line); border-radius: 8px;
+    width: 42px; height: 42px; font-size: 1.3rem; cursor: pointer; color: var(--navy);
+  }
+
+  /* ===== 첫 화면 ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy) 60%, var(--accent));
+    color: #fff; padding: 80px 0 72px;
+  }
+  .hero .label { font-size: 0.95rem; opacity: 0.85; letter-spacing: 0.1em; }
+  .hero h1 { font-size: 2.6rem; margin: 8px 0 12px; letter-spacing: 0.05em; }
+  .hero .tagline { font-size: 1.2rem; font-weight: 600; max-width: 640px; }
+  .hero .motto {
+    margin-top: 24px; padding: 14px 18px; border-left: 4px solid #93c5fd;
+    background: rgba(255,255,255,0.1); border-radius: 0 8px 8px 0; max-width: 640px;
+  }
+  .hero-btns { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 12px 22px; border-radius: 999px; font-weight: 700;
+    text-decoration: none; border: 2px solid #fff; transition: 0.2s;
+  }
+  .btn.primary { background: #fff; color: var(--navy); }
+  .btn.ghost { color: #fff; }
+  .btn:hover { transform: translateY(-2px); }
+
+  /* ===== 섹션 공통 ===== */
+  section { padding: 72px 0; scroll-margin-top: 60px; }
+  section:nth-of-type(even) { background: var(--bg-soft); }
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .sec-num {
+    background: var(--navy); color: #fff; font-weight: 800; font-size: 0.9rem;
+    padding: 4px 10px; border-radius: 6px;
+  }
+  .sec-head h2 { font-size: 1.6rem; color: var(--navy); line-height: 1.4; }
+  .sec-sub { color: var(--muted); margin: -16px 0 28px; }
+  p + p { margin-top: 14px; }
+  strong { color: var(--navy-dark); }
+
+  /* 나타나기 효과 */
+  .reveal { opacity: 0; transform: translateY(24px); transition: 0.6s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+
+  /* ===== 경력 타임라인 ===== */
+  .timeline { list-style: none; position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px;
+    width: 2px; background: var(--line);
+  }
+  .timeline li { position: relative; margin-bottom: 22px; }
+  .timeline li::before {
+    content: ""; position: absolute; left: -26px; top: 8px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: #fff; border: 3px solid var(--accent);
+  }
+  .timeline .org { font-weight: 800; color: var(--navy); }
+  .timeline .role { color: var(--muted); font-size: 0.95rem; }
+
+  /* ===== 카드 ===== */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px; box-shadow: 0 2px 8px rgba(30,58,138,0.05);
+  }
+  .card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 8px; }
+  .card .big { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+  .card ul { padding-left: 18px; }
+
+  /* ===== 기술 태그 + 필터 ===== */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .filters button {
+    border: 1px solid var(--line); background: #fff; color: var(--muted);
+    padding: 6px 14px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 0.9rem; font-weight: 600;
+  }
+  .filters button.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    background: #e8eefc; color: var(--navy); padding: 6px 12px;
+    border-radius: 8px; font-size: 0.92rem; font-weight: 600; transition: 0.2s;
+  }
+  .tag.hide { display: none; }
+
+  /* ===== 연락처 ===== */
+  .contact-box {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;
+  }
+  .contact-item {
+    display: flex; align-items: center; gap: 14px; padding: 20px;
+    border: 1px solid var(--line); border-radius: var(--radius); background: #fff;
+  }
+  .contact-item .icon {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: #fff;
+    display: grid; place-items: center; font-size: 1.2rem; flex-shrink: 0;
+  }
+  .contact-item .k { font-size: 0.85rem; color: var(--muted); }
+  .contact-item a { font-weight: 700; text-decoration: none; color: var(--navy); }
+  .copy-btn {
+    margin-left: auto; border: 1px solid var(--line); background: var(--bg-soft);
+    border-radius: 8px; padding: 6px 10px; cursor: pointer; font: inherit; font-size: 0.85rem;
+  }
+
+  footer { background: var(--navy-dark); color: #cbd5e1; text-align: center; padding: 28px 0; font-size: 0.9rem; }
+
+  /* 맨 위로 버튼 */
+  #toTop {
+    position: fixed; right: 18px; bottom: 18px; width: 46px; height: 46px; border-radius: 50%;
+    border: none; background: var(--navy); color: #fff; font-size: 1.2rem; cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); opacity: 0; pointer-events: none; transition: 0.3s;
+  }
+  #toTop.show { opacity: 1; pointer-events: auto; }
+
+  /* 복사 알림 */
+  #toast {
+    position: fixed; left: 50%; bottom: 80px; transform: translateX(-50%);
+    background: #111827; color: #fff; padding: 10px 18px; border-radius: 999px;
+    font-size: 0.9rem; opacity: 0; transition: 0.3s; pointer-events: none;
+  }
+  #toast.show { opacity: 1; }
+
+  /* ===== 모바일 ===== */
+  @media (max-width: 760px) {
+    .container { padding: 0 16px; }
+    .menu-btn { display: block; }
+    .menu {
+      display: none; position: absolute; top: 60px; left: 0; right: 0;
+      flex-direction: column; background: #fff; border-bottom: 1px solid var(--line);
+      padding: 8px 16px 14px; box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+    }
+    .menu.open { display: flex; }
+    .menu a { padding: 12px; }
+    .hero { padding: 56px 0 48px; }
+    .hero h1 { font-size: 2rem; }
+    .hero .tagline { font-size: 1.05rem; }
+    section { padding: 52px 0; }
+    .sec-head h2 { font-size: 1.3rem; }
+    .contact-item { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="logo">홍철선</a>
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+    <ul class="menu" id="menu">
+      <li><a href="#about">성장배경</a></li>
+      <li><a href="#career">경력·성과</a></li>
+      <li><a href="#growth">학력·자기계발</a></li>
+      <li><a href="#vision">입사 후 포부</a></li>
+      <li><a href="#contact">연락처</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- 첫 화면 -->
+<div class="hero" id="top">
+  <div class="container">
+    <div class="label">자기소개서</div>
+    <h1>홍 철 선</h1>
+    <p class="tagline">현장 기반의 ERP·MES·SCM 아키텍트 및 AI·데이터 자동화 실무 전문가</p>
+    <p class="motto">‘화려한 기술’보다 <strong style="color:#fff">‘현업이 당장 편해지고 경영 성과로 직결되는 살아있는 시스템’</strong>을 최우선 가치로 삼아왔습니다.</p>
+    <div class="hero-btns">
+      <a href="#career" class="btn primary">경력 보기</a>
+      <a href="#contact" class="btn ghost">연락하기</a>
+    </div>
+  </div>
+</div>
+
+<!-- 01 성장배경 -->
+<section id="about">
+  <div class="container reveal">
+    <div class="sec-head"><span class="sec-num">01</span><h2>성장배경 및 직무 철학</h2></div>
+    <p class="sec-sub">현장에서 출발해 시스템을 설계하다</p>
+    <p>저의 커리어는 책상이 아닌 제조 현장의 기계 설비에서 시작되었습니다. 고교 기계과를 졸업하고 <strong>전국기능경진대회 선반 직종에 출전</strong>하며 정밀 제조의 기본기를 다졌고, 첫 직장인 <strong>PHILIPS Korea 기술부</strong>에서 자동화 생산라인의 설비 보전과 고장 분석을 담당했습니다. 이후 대학에서 기계설비공학을 전공하며 공학적 사고의 기틀을 세웠습니다.</p>
+    <p>이직 후 입사한 <strong>삼화전자공업(주)</strong>에서는 생산관리·구매·기획 등 제조의 핵심 관리 부서를 두루 거쳤습니다. 당시 사내에 PC가 처음 도입되던 시기, 반복적인 자재·생산 집계 업무를 개선하고자 독학으로 BASIC 언어를 익혀 업무 프로그램을 직접 개발한 것이 평생의 업이 된 IT·전산 전문가로서의 첫걸음이었습니다.</p>
+    <p>현업의 고충을 누구보다 깊이 이해하고 있기에, 저는 늘 ‘화려한 기술’보다 <strong>‘현업이 당장 편해지고 경영 성과로 직결되는 살아있는 시스템’</strong>을 최우선 가치로 삼아왔습니다.</p>
+  </div>
+</section>
+
+<!-- 02 경력·성과 -->
+<section id="career">
+  <div class="container reveal">
+    <div class="sec-head"><span class="sec-num">02</span><h2>핵심 역량 및 주요 성과</h2></div>
+    <p class="sec-sub">대형 ERP 구축부터 비용 절감, 그리고 AI·자동화까지</p>
+
+    <ul class="timeline">
+      <li>
+        <div class="org">PHILIPS Korea 기술부</div>
+        <div class="role">첫 직장 · 자동화 생산라인 설비 보전, 고장 분석</div>
+      </li>
+      <li>
+        <div class="org">삼화전자공업(주)</div>
+        <div class="role">생산관리·구매·기획 → 전산팀장</div>
+        <p>삼화콘덴서그룹 3사의 정보시스템 통합 마스터플랜을 수립하고, 기존 IBM AS/400 레거시 시스템을 글로벌 표준인 <strong>SAP R/3로 전환·마이그레이션</strong>하는 대형 프로젝트를 성공적으로 완수했습니다. 외부 유지보수 업체에 의존하던 관행을 깨고 직접 SAP 컨설턴트 자격을 취득해 ABAP 모듈 개발과 운영을 내재화했습니다.</p>
+      </li>
+      <li>
+        <div class="org">(주)신진에스엠</div>
+        <div class="role">전산팀장(부장)</div>
+        <p>국내외 본사·계열사·협력사를 아우르는 <strong>더존 ERP iU 통합정보시스템</strong>과 생산현장 <strong>iPlus MES, SCM·B2B 포털</strong>의 실시간 연동 체계를 구축했습니다. MS-SQL과 Excel VBA를 결합한 경영진 의사결정 대시보드를 자체 개발해 월간·주간 결산 및 보고 업무의 수작업을 획기적으로 줄였습니다.</p>
+      </li>
+    </ul>
+
+    <div class="cards" style="margin-top:28px">
+      <div class="card">
+        <h3>유지보수 비용 절감</h3>
+        <div class="big">매년 약 2억 원</div>
+        <p>SAP ABAP 개발·운영 내재화로 고정 유지보수 비용 절감</p>
+      </div>
+      <div class="card">
+        <h3>그룹 시스템 통합</h3>
+        <div class="big">3사 통합</div>
+        <p>삼화콘덴서그룹 정보시스템 통합 마스터플랜 수립, AS/400 → SAP R/3 전환</p>
+      </div>
+      <div class="card">
+        <h3>실시간 연동 체계</h3>
+        <div class="big">ERP·MES·SCM</div>
+        <p>더존 ERP iU, iPlus MES, SCM·B2B 포털 연동 구축</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 학력·자기계발 -->
+<section id="growth">
+  <div class="container reveal">
+    <div class="sec-head"><span class="sec-num">03</span><h2>끊임없는 자기계발과 디지털 전환(DX) 역량</h2></div>
+    <p>빠르게 변화하는 IT 환경 속에서 도태되지 않기 위해 학업과 기술 습득을 멈추지 않았습니다. 야간·주말을 활용해 학위를 취득하며 IT 기술과 경영 회계·전략을 융합했습니다.</p>
+
+    <div class="cards" style="margin:24px 0 32px">
+      <div class="card">
+        <h3>🎓 학력</h3>
+        <ul>
+          <li>고교 기계과 졸업</li>
+          <li>대학 기계설비공학 전공</li>
+          <li>정보통신공학 학사</li>
+          <li>경영대학원 경영정보학 석사</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>📜 자격·수료</h3>
+        <ul>
+          <li>SAP 컨설턴트 자격</li>
+          <li>디지털리터러시지도사 자격</li>
+          <li>Python 데이터 분석(NumPy, Pandas, 시각화) 과정 수료</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🤖 최근 실무 적용</h3>
+        <p>생성형 AI와 Power Query·VBA를 실무에 접목해 데이터 정제, ERP 문서 자동 처리, 분석 리포트 생성 파이프라인을 직접 구현하고 있습니다.</p>
+      </div>
+    </div>
+
+    <h3 style="color:var(--navy); margin-bottom:12px">다뤄 본 기술</h3>
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">전체</button>
+      <button data-f="erp">ERP·MES</button>
+      <button data-f="data">DB·자동화</button>
+      <button data-f="ai">AI·분석</button>
+    </div>
+    <div class="tags" id="tags">
+      <span class="tag" data-c="erp">SAP R/3</span>
+      <span class="tag" data-c="erp">ABAP</span>
+      <span class="tag" data-c="erp">IBM AS/400</span>
+      <span class="tag" data-c="erp">더존 ERP iU</span>
+      <span class="tag" data-c="erp">iPlus MES</span>
+      <span class="tag" data-c="erp">SCM·B2B 포털</span>
+      <span class="tag" data-c="data">MS-SQL</span>
+      <span class="tag" data-c="data">Excel VBA</span>
+      <span class="tag" data-c="data">Power Query</span>
+      <span class="tag" data-c="data">BASIC</span>
+      <span class="tag" data-c="ai">Python (NumPy, Pandas)</span>
+      <span class="tag" data-c="ai">ChatGPT</span>
+      <span class="tag" data-c="ai">Gemini</span>
+      <span class="tag" data-c="ai">Claude</span>
+      <span class="tag" data-c="ai">MCP</span>
+    </div>
+  </div>
+</section>
+
+<!-- 04 포부 -->
+<section id="vision">
+  <div class="container reveal">
+    <div class="sec-head"><span class="sec-num">04</span><h2>입사 후 포부</h2></div>
+    <p class="sec-sub">즉시 다양한 실무적응가능하고 디지털 혁신을 이끄는 든든한 파트너</p>
+    <div class="cards" style="margin-bottom:24px">
+      <div class="card"><h3>가장 큰 자산 ①</h3><p>생산·구매·원가·회계 프로세스에 대한 완벽한 이해</p></div>
+      <div class="card"><h3>가장 큰 자산 ②</h3><p>ERP·DB·자동화 툴을 자유자재로 다루는 실무 구현력</p></div>
+    </div>
+    <p>입사 후 별도의 적응 기간 없이 즉시 현업 부서와 전산·시스템 간의 병목 구간을 진단하고, 기존 ERP·MES 데이터의 정합성을 높이는 한편 Excel VBA, SQL, Python 및 AI 도구를 활용한 업무 자동화를 통해 조직의 생산성과 원가 경쟁력을 한 단계 끌어올리겠습니다.</p>
+    <p>나이는 숫자에 불과하며, 오랜 경륜에서 나오는 안정적인 문제 해결력과 최신 AI 기술을 흡수하는 유연함을 모두 갖춘 실전형 전문가로서 귀사의 성장에 실질적으로 기여하겠습니다.</p>
+  </div>
+</section>
+
+<!-- 05 연락처 -->
+<section id="contact">
+  <div class="container reveal">
+    <div class="sec-head"><span class="sec-num">05</span><h2>연락처</h2></div>
+    <p class="sec-sub">감사합니다. 지원자 홍철선 드림</p>
+    <div class="contact-box">
+      <div class="contact-item">
+        <div class="icon">✉</div>
+        <div><div class="k">이메일</div><a href="mailto:cshong16@naver.com">cshong16@naver.com</a></div>
+        <button class="copy-btn" data-copy="cshong16@naver.com">복사</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 홍철선 · 자기소개 페이지</footer>
+
+<button id="toTop" aria-label="맨 위로">↑</button>
+<div id="toast">복사했습니다</div>
+
+<script>
+  // 1) 모바일 메뉴 열고 닫기
+  const menuBtn = document.getElementById('menuBtn');
+  const menu = document.getElementById('menu');
+  menuBtn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.textContent = open ? '✕' : '☰';
+  });
+  // 메뉴 항목을 누르면 메뉴 닫기
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    menuBtn.textContent = '☰';
+    menuBtn.setAttribute('aria-expanded', false);
+  }));
+
+  // 2) 지금 보고 있는 섹션의 메뉴에 색 표시
+  const links = [...menu.querySelectorAll('a')];
+  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+  function markActive() {
+    const y = window.scrollY + 120;
+    let current = null;
+    sections.forEach((s, i) => { if (s.offsetTop <= y) current = i; });
+    // 페이지 맨 아래면 마지막 섹션
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = sections.length - 1;
+    links.forEach((a, i) => a.classList.toggle('active', i === current));
+    document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+  }
+  window.addEventListener('scroll', markActive);
+  markActive();
+
+  // 3) 스크롤하면 섹션이 부드럽게 나타나기
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // 4) 기술 태그 필터
+  document.getElementById('filters').addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    document.querySelectorAll('#filters button').forEach(b => b.classList.toggle('on', b === btn));
+    const f = btn.dataset.f;
+    document.querySelectorAll('#tags .tag').forEach(t => t.classList.toggle('hide', f !== 'all' && t.dataset.c !== f));
+  });
+
+  // 5) 맨 위로
+  document.getElementById('toTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // 6) 연락처 복사
+  const toast = document.getElementById('toast');
+  document.querySelectorAll('.copy-btn').forEach(b => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy); toast.textContent = '복사했습니다'; }
+    catch { toast.textContent = '복사가 안 되면 직접 선택해 주세요'; }
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 1500);
+  }));
+</script>
+</body>
+</html>
